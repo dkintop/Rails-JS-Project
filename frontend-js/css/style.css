@@ -14,18 +14,39 @@ body {
 }
 
 .index-container {
-  display: grid;
-  grid-gap: 20px;
+  grid-column-gap: 20px;
   padding: 20px;
 }
 
-.card {
+/* .card {
   background-color: gray;
   width: 25%;
   justify-content: center;
   padding: 20px;
-}
+  display: inline-grid;
+} */
 
 .card #avatar {
-  width: 25%;
+  justify-self: center;
+  height: 12rem;
+  width: 75%;
+  padding: 10px;
+}
+
+.card #fokemon-name {
+  height: 10px;
+  background-color: yellow;
+  color: aliceblue;
+}
+.card {
+  text-align: center;
+  border: grey solid 1px;
+
+  width: 20%;
+  height: 100%;
+  display: inline-grid;
+  grid-template-rows: 100px, 30px;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px black;
+  background-color: gray;
 }

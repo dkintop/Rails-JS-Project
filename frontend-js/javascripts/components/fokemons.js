@@ -46,7 +46,7 @@ class Fokemons {
 
     const container = document.getElementById("index-container");
 
-    let card_elements = [name, element_type, hit_points, attack_points, avatar];
+    let card_elements = [name, avatar, hit_points, element_type, attack_points];
 
     card_elements.forEach(element => parent.appendChild(element));
 
