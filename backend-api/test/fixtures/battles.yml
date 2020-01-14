@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fokemon_id: 1
+  challenger: 1
+
+two:
+  fokemon_id: 1
+  challenger: 1

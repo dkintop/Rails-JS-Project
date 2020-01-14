@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: 
+  type: 
+  hit_points: 
+  attack_points: 1
+  avatar: MyString
+
+two:
+  name: 
+  type: 
+  hit_points: 
+  attack_points: 1
+  avatar: MyString
