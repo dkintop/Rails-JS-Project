@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    <div id="header-main"> Fokemon!</div>
     <div class="container">
       <div id= "create-form-container"> 
         <form id="new-fokemon-form">
@@ -25,8 +26,15 @@
           <label>Attack Points:</label>
           <input type="number" value="0" /><br />
           <input type="submit" />
-      </form>
+        </form>
+      </div>
+      <div id= "index-container"></div>
     </div>
-    <script src="javascripts/index.js">
+    
+    
+    <script src="javascripts/adapters/fokemonAdapter.js"></script>
+    <script src="javascripts/components/fokemons.js"></script>
+    <script src="javascripts/components/app.js"></script>
+    <script src="javascripts/index.js"></script>
   </body>
 </html>

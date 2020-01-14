@@ -1,2 +1,14 @@
+body {
+  background-color: rgb(186, 130, 238);
+}
+
+#header-main {
+  font-family: Marker Felt, fantasy;
+  color: yellow;
+  font-size: 60px;
+  text-align: center;
+  text-shadow: -2px 0 blue, 0 1px blue, 1px 0 blue, 0 -2px blue;
+}
+
 #new-fokemon-form {
 }
