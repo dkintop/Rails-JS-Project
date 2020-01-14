@@ -8,6 +8,26 @@ class Fokemons {
 
   initBindingsAndEventListeners() {
     this.indexContainer = document.getElementById("index-container");
+    this.fokemonForm = document.getElementById("new-fokemon-form");
+
+    this.fokemonForm.addEventListener("submit", this.createFokemon.bind(this));
+  }
+
+  createFokemon(e) {
+    e.preventDefault();
+    const name = document.getElementById("name").value;
+    const elementType = document.getElementById("element_type").value;
+    const hitPoints = document.getElementById("hit_points").value;
+    const attackPoints = document.getElementById("attack_points").value;
+    const avatar = document.getElementById("avatar").value;
+
+    this.adapter.createFokemon({
+      name: name,
+      element_type: elementType,
+      hit_points: hitPoints,
+      attack_points: attackPoints,
+      avatar: avatar
+    });
   }
 
   fetchAndLoadFokemons() {

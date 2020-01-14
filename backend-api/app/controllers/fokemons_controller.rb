@@ -2,6 +2,7 @@ class FokemonsController < ApplicationController
 
 
     def create 
+        #binding.pry
         @fokemon = Fokemon.create(fokemon_params)
         render json: @fokemon, status: 200
     end
