@@ -11,10 +11,10 @@ class FokemonsController < ApplicationController
         render json: @fokemon, status: 200
     end
 
-    def update 
+    def destroy
         @fokemon = Fokemon.find(params[:id])
-        @fokemon.update(fokemon_params)
-        render json: @fokemon, status: 200
+        @fokemon.delete 
+        render json: {fokemonId: @fokemon.id}
     end
 
 

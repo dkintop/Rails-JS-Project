@@ -2,8 +2,12 @@ class Fokemons {
   constructor() {
     this.fokemons = [];
     this.adapter = new FokemonAdapter();
-    //this.bindEventListeners();
+    this.initBindingsAndEventListeners();
     this.fetchAndLoadFokemons();
+  }
+
+  initBindingsAndEventListeners() {
+    this.indexContainer = document.getElementById("index-container");
   }
 
   fetchAndLoadFokemons() {
