@@ -5,7 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
 
-  <body></body>
+  <body>
+    <div class="container">
+      <div id= "create-form-container"> 
+        <form id="new-fokemon-form">
+          <label>Name:</label>
+          <input type="text" value="name" name="name" /> <br />
+          <label>Element Type:</label>
+          <select name="element_type">
+            <option value="Fire">Fire</option>
+            <option value="Water">Water</option>
+            <option value="Earth">Earth</option>
+          <select><br />
+          <label>HP:</label>
+          <input type="number" value="0" /><br />
+          <label>Attack Points:</label>
+          <input type="number" value="0" /><br />
+          <input type="submit" />
+      </form>
+    </div>
+    <script src="javascripts/index.js">
+  </body>
 </html>
