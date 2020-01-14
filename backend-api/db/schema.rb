@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_010057) do
+ActiveRecord::Schema.define(version: 2020_01_14_135438) do
 
   create_table "battles", force: :cascade do |t|
     t.integer "fokemon_id"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_01_14_010057) do
 
   create_table "fokemons", force: :cascade do |t|
     t.string "name"
-    t.string "type", default: "water"
+    t.string "element_type", default: "water"
     t.integer "hit_points", default: 0
     t.integer "attack_points", default: 0
     t.string "avatar", default: "https://i.ytimg.com/vi/OxgKvRvNd5o/maxresdefault.jpg"

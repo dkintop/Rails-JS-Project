@@ -1,2 +1,7 @@
 class FokemonsController < ApplicationController
+
+
+    
+
+
 end
