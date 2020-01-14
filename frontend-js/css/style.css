@@ -12,3 +12,11 @@ body {
 
 #new-fokemon-form {
 }
+
+.card {
+  background-color: gray;
+}
+
+.card #avatar {
+  width: 25%;
+}
