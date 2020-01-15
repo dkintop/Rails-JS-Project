@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_14_135438) do
+ActiveRecord::Schema.define(version: 2020_01_15_223717) do
 
   create_table "battles", force: :cascade do |t|
     t.integer "fokemon_id"
     t.integer "challenger"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "winner"
   end
 
   create_table "fokemons", force: :cascade do |t|
