@@ -85,10 +85,12 @@ body {
 }
 
 .delete_button {
-  width: 25%;
-  color: red;
+  width: fit-content;
+  color: rgb(187, 36, 36);
   background-color: black;
   font-weight: bold;
+  border-radius: 10px;
+  border-color: rgb(187, 36, 36);
 }
 
 .delete_button:hover {

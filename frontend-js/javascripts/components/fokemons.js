@@ -8,19 +8,8 @@ class Fokemons {
 
   initBindingsAndEventListeners() {
     this.fokemonForm = document.getElementById("new-fokemon-form");
-
     this.fokemonForm.addEventListener("submit", this.createFokemon.bind(this));
   }
-
-  // deleteFokemon(fokemon_id) {
-  //   return fetch(`http://localhost:3000/fokemons/${fokemon_id}`, {
-  //     method: "delete"
-  //   })
-  //     .then(response => response.json())
-  //     .then(json => {
-  //       return json;
-  //     });
-  // }
 
   createFokemon(e) {
     e.preventDefault();
@@ -55,8 +44,8 @@ class Fokemons {
   }
 
   createCard(fokemon) {
-    let parent = document.createElement("DIV");
-    parent.setAttribute("class", "card");
+    let card = document.createElement("DIV");
+    card.setAttribute("class", "card");
 
     let name = document.createElement("DIV");
     name.setAttribute("id", "fokemon_name");
@@ -81,11 +70,11 @@ class Fokemons {
 
     const container = document.getElementById("index-container");
 
-    let delete_button = document.createElement("DIV");
+    let delete_button = document.createElement("BUTTON");
     delete_button.setAttribute("id", `delete_button${fokemon.id}`);
     delete_button.setAttribute("class", "delete_button");
     delete_button.setAttribute("data-id", `${fokemon.id}`);
-    delete_button.innerHTML = "Delete";
+    delete_button.innerHTML = "X";
 
     let card_elements = [
       name,
@@ -96,9 +85,9 @@ class Fokemons {
       delete_button
     ];
 
-    card_elements.forEach(element => parent.appendChild(element));
+    card_elements.forEach(element => card.appendChild(element));
 
-    document.querySelector("#index-container").appendChild(parent);
+    document.querySelector("#index-container").appendChild(card);
     //event listener for delete button function added here due to errors
 
     this.get_delete_button = document.getElementById(
@@ -111,7 +100,7 @@ class Fokemons {
         .then(response => response.json())
         .then(json => {
           return json;
-        }); //insert delete function here
+        });
     });
   }
 }
