@@ -11,6 +11,23 @@ body {
 }
 
 #new-fokemon-form {
+  display: inline-grid;
+  background-color: gray;
+  border-color: black;
+  border-width: thick;
+  padding: 5px;
+}
+
+#create-form-container {
+  display: inline-grid;
+  width: 25%;
+  border: thick;
+  border-color: indigo;
+  padding: 5px;
+  float: left;
+  box-sizing: border-box;
+  background-color: gray;
+  font-weight: ;
 }
 
 .index-container {
@@ -54,10 +71,13 @@ body {
 }
 
 #battlfield-container {
-  display: grid;
+  display: inline-grid;
   background-color: black;
-  height: 50px;
-  width: 50%;
+  height: 330px;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  box-sizing: border-box;
 }
 
 #delete_button {
