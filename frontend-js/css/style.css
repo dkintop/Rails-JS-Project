@@ -22,7 +22,8 @@ body {
   display: inline-grid;
   width: 25%;
   border: thick;
-  border-color: indigo;
+  border-color: black;
+  border-style: solid;
   padding: 5px;
   float: left;
   box-sizing: border-box;
@@ -78,6 +79,9 @@ body {
   padding: 10px;
   float: left;
   box-sizing: border-box;
+  border-style: double;
+  border-width: 5px;
+  border-color: yellow;
 }
 
 #delete_button {
