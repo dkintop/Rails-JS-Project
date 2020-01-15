@@ -2,12 +2,11 @@ class Fokemons {
   constructor() {
     this.fokemons = [];
     this.adapter = new FokemonAdapter();
-    this.initBindingsAndEventListeners();
     this.fetchAndLoadFokemons();
+    this.initBindingsAndEventListeners();
   }
 
   initBindingsAndEventListeners() {
-    this.indexContainer = document.getElementById("index-container");
     this.fokemonForm = document.getElementById("new-fokemon-form");
 
     this.fokemonForm.addEventListener("submit", this.createFokemon.bind(this));
@@ -70,7 +69,9 @@ class Fokemons {
     const container = document.getElementById("index-container");
 
     let delete_button = document.createElement("DIV");
-    delete_button.setAttribute("id", "delete_button");
+    delete_button.setAttribute("id", `delete_button${fokemon.id}`);
+    delete_button.setAttribute("class", "delete_button");
+    delete_button.setAttribute("data-id", `${fokemon.id}`);
     delete_button.innerHTML = "Delete";
     let card_elements = [
       name,
@@ -84,5 +85,12 @@ class Fokemons {
     card_elements.forEach(element => parent.appendChild(element));
 
     document.querySelector("#index-container").appendChild(parent);
+
+    this.get_delete_button = document.getElementById(
+      `delete_button${fokemon.id}`
+    );
+    this.get_delete_button.addEventListener("click", function() {
+      console.log(`deleted ${fokemon.name}`);
+    });
   }
 }
