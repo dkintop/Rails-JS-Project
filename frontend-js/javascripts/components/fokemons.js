@@ -12,6 +12,16 @@ class Fokemons {
     this.fokemonForm.addEventListener("submit", this.createFokemon.bind(this));
   }
 
+  // deleteFokemon(fokemon_id) {
+  //   return fetch(`http://localhost:3000/fokemons/${fokemon_id}`, {
+  //     method: "delete"
+  //   })
+  //     .then(response => response.json())
+  //     .then(json => {
+  //       return json;
+  //     });
+  // }
+
   createFokemon(e) {
     e.preventDefault();
     const name = document.getElementById("name").value;
@@ -52,12 +62,15 @@ class Fokemons {
     name.setAttribute("id", "fokemon_name");
     name.innerHTML = `${fokemon.name.charAt(0).toUpperCase() +
       fokemon.name.slice(1)}`;
+
     let element_type = document.createElement("DIV");
     element_type.setAttribute("id", "element_type");
     element_type.innerHTML = `Element: ${fokemon.element_type}`;
+
     let hit_points = document.createElement("DIV");
     hit_points.setAttribute("id", "hit_points");
     hit_points.innerHTML = `HP: ${fokemon.hit_points}`;
+
     let attack_points = document.createElement("DIV");
     attack_points.setAttribute("id", "attack_points");
     attack_points.innerHTML = `Attack Points: ${fokemon.attack_points}`;
@@ -73,6 +86,7 @@ class Fokemons {
     delete_button.setAttribute("class", "delete_button");
     delete_button.setAttribute("data-id", `${fokemon.id}`);
     delete_button.innerHTML = "Delete";
+
     let card_elements = [
       name,
       avatar,
@@ -85,12 +99,19 @@ class Fokemons {
     card_elements.forEach(element => parent.appendChild(element));
 
     document.querySelector("#index-container").appendChild(parent);
+    //event listener for delete button function added here due to errors
 
     this.get_delete_button = document.getElementById(
       `delete_button${fokemon.id}`
     );
     this.get_delete_button.addEventListener("click", function() {
-      console.log(`deleted ${fokemon.name}`);
+      return fetch(`http://localhost:3000/fokemons/${fokemon.id}`, {
+        method: "delete"
+      })
+        .then(response => response.json())
+        .then(json => {
+          return json;
+        }); //insert delete function here
     });
   }
 }
