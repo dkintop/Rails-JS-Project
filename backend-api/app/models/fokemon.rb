@@ -1,5 +1,5 @@
 class Fokemon < ApplicationRecord
-    has_many :battles
+    has_many :trainers
     validates :name, presence: true
 
 end

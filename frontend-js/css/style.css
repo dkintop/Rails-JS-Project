@@ -85,7 +85,21 @@ div #fokemon-name {
   background-color: red;
 }
 
-#battlfield-container {
+.train_button {
+  width: fit-content;
+  color: white;
+  background-color: green;
+  font-weight: bold;
+  border-radius: 10px;
+  border-color: white;
+}
+
+.train_button:hover {
+  color: green;
+  background-color: white;
+}
+
+#training-field-container {
   display: grid;
   background-color: black;
   height: 330px;
@@ -99,13 +113,55 @@ div #fokemon-name {
   color: white;
 }
 
-#battlefield-header {
+#trainer-name {
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  float: left;
+  margin: 0px auto;
+  font-size: larger;
+  position: relative;
+  background-color: green;
+  color: white;
+  font-weight: bolder;
+}
+
+#training-field-header {
   height: fit-content;
   width: 100;
   background-color: gray;
   font-size: 45px;
   text-align: center;
   text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -2px black;
+}
+
+#train-button {
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  float: left;
+  margin: 0px auto;
+  font-size: larger;
+  position: relative;
+  background-color: green;
+  color: white;
+  font-weight: bolder;
+}
+
+#save-button {
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+  display: grid;
+  float: left;
+  margin: 0px auto;
+  font-size: larger;
+  position: relative;
+  background-color: rgb(73, 73, 235);
+  color: white;
+  font-weight: bolder;
 }
 
 #battle-start-button {

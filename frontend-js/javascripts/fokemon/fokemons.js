@@ -67,6 +67,7 @@ class Fokemons {
     let avatar = document.createElement("IMG");
     avatar.setAttribute("id", "avatar");
     avatar.setAttribute("src", fokemon.avatar);
+    avatar.setAttribute("data-id", fokemon.id);
 
     const container = document.getElementById("index-container");
 
@@ -76,12 +77,19 @@ class Fokemons {
     delete_button.setAttribute("data-id", `${fokemon.id}`);
     delete_button.innerHTML = "X";
 
+    let train_button = document.createElement("BUTTON");
+    train_button.setAttribute("id", `train_button${fokemon.id}`);
+    train_button.setAttribute("class", "train_button");
+    train_button.setAttribute("data-id", `${fokemon.id}`);
+    train_button.innerHTML = "Train";
+
     let card_elements = [
       name,
       avatar,
       hit_points,
       element_type,
       attack_points,
+      train_button,
       delete_button
     ];
 

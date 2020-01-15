@@ -10,15 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_15_223717) do
-
-  create_table "battles", force: :cascade do |t|
-    t.integer "fokemon_id"
-    t.integer "challenger"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "winner"
-  end
+ActiveRecord::Schema.define(version: 2020_01_15_232523) do
 
   create_table "fokemons", force: :cascade do |t|
     t.string "name"
@@ -26,6 +18,13 @@ ActiveRecord::Schema.define(version: 2020_01_15_223717) do
     t.integer "hit_points", default: 0
     t.integer "attack_points", default: 0
     t.string "avatar", default: "https://i.ytimg.com/vi/OxgKvRvNd5o/maxresdefault.jpg"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "trainers", force: :cascade do |t|
+    t.string "name"
+    t.integer "fokemon_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
