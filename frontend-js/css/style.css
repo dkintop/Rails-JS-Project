@@ -59,3 +59,15 @@ body {
   height: 50px;
   width: 50%;
 }
+
+#delete_button {
+  width: 25%;
+  color: red;
+  background-color: black;
+  font-weight: bold;
+}
+
+#delete_button:hover {
+  color: black;
+  background-color: red;
+}
