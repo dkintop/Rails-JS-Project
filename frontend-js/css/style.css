@@ -52,3 +52,10 @@ body {
   box-shadow: 4px 5px black;
   background-color: gray;
 }
+
+#battlfield-container {
+  display: grid;
+  background-color: black;
+  height: 50px;
+  width: 50%;
+}

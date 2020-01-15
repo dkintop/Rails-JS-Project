@@ -42,7 +42,6 @@ class Fokemons {
   }
 
   renderFokemons() {
-    const indexContainer = document.getElementById("index-container");
     this.fokemons.forEach(fokemon => this.createCard(fokemon));
   }
 
@@ -70,7 +69,17 @@ class Fokemons {
 
     const container = document.getElementById("index-container");
 
-    let card_elements = [name, avatar, hit_points, element_type, attack_points];
+    let delete_button = document.createElement("DIV");
+    delete_button.setAttribute("id", "delete_button");
+    delete_button.innerHTML = "Delete";
+    let card_elements = [
+      name,
+      avatar,
+      hit_points,
+      element_type,
+      attack_points,
+      delete_button
+    ];
 
     card_elements.forEach(element => parent.appendChild(element));
 
