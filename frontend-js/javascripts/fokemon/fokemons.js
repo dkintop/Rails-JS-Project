@@ -82,6 +82,9 @@ class Fokemons {
     train_button.setAttribute("class", "train_button");
     train_button.setAttribute("data-id", `${fokemon.id}`);
     train_button.innerHTML = "Train";
+    train_button.addEventListener("click", function() {
+      new Train();
+    });
 
     let card_elements = [
       name,
