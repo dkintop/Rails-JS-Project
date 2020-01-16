@@ -104,7 +104,7 @@ div #fokemon-name {
 #training-field-container {
   display: grid;
   background-color: black;
-  height: 330px;
+  height: fit-content;
   width: 75%;
   padding: 10px;
   float: left;
@@ -166,18 +166,18 @@ div #fokemon-name {
   font-weight: bolder;
 }
 
-#battle-start-button {
-  align-self: center;
-  width: fit-content;
-  height: fit-content;
-  display: grid;
-  float: left;
-  margin: 0px auto;
-  font-size: larger;
-  position: relative;
-  background-color: green;
-  color: white;
-  font-weight: bolder;
+#avatarContainer {
+  width: 50%;
+  height: 50%;
+  background-color: gray;
+}
+
+#trainingImage {
+  justify-self: center;
+  height: 12rem;
+  width: auto;
+  border: yellow solid 3px;
+  border-radius: 10px;
 }
 
 /* .something{
