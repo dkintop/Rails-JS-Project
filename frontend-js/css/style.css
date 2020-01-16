@@ -44,7 +44,7 @@ body {
   display: inline-grid;
 } */
 
-.card #avatar {
+.card .avatar {
   justify-self: center;
   height: 12rem;
   width: 75%;

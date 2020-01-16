@@ -65,7 +65,8 @@ class Fokemons {
     attack_points.innerHTML = `Attack Points: ${fokemon.attack_points}`;
 
     let avatar = document.createElement("IMG");
-    avatar.setAttribute("id", "avatar");
+    avatar.setAttribute("class", "avatar");
+    avatar.setAttribute("id", `avatar${fokemon.id}`);
     avatar.setAttribute("src", fokemon.avatar);
     avatar.setAttribute("data-id", fokemon.id);
 
