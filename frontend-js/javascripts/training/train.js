@@ -7,4 +7,7 @@ class Train {
   logit() {
     console.log(this.fokemon_id);
   }
+  this() {
+    let a = b;
+  }
 }
