@@ -16,4 +16,8 @@ class FokemonAdapter {
       body: JSON.stringify({ fokemon })
     });
   }
+
+  showFokemon(id) {
+    return fetch(this.baseURL + "/" + `${id}`).then(res => res.json());
+  }
 }

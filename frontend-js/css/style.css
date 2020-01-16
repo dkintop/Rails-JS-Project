@@ -48,7 +48,9 @@ body {
   justify-self: center;
   height: 12rem;
   width: 75%;
-  padding: 10px;
+
+  border: yellow solid 3px;
+  border-radius: 10px;
 }
 
 div #fokemon-name {

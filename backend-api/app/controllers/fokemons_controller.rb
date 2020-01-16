@@ -18,6 +18,11 @@ class FokemonsController < ApplicationController
         render json: {fokemonId: @fokemon.id}
     end
 
+    def show
+        @fokemon = Fokemon.find(params[:id])
+        render json: @fokemon
+    end
+
 
     private 
 

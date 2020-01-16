@@ -11,4 +11,7 @@ class TrainersController < ApplicationController
         render json: @trainers, status: 200
     end
 
+
+    
+
 end
