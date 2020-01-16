@@ -57,11 +57,11 @@ class Fokemons {
     element_type.innerHTML = `Element: ${fokemon.element_type}`;
 
     let hit_points = document.createElement("DIV");
-    hit_points.setAttribute("id", "hit_points");
+    hit_points.setAttribute("id", `hit_points${fokemon.id}`);
     hit_points.innerHTML = `HP: ${fokemon.hit_points}`;
 
     let attack_points = document.createElement("DIV");
-    attack_points.setAttribute("id", "attack_points");
+    attack_points.setAttribute("id", `attack_points${fokemon.id}`);
     attack_points.innerHTML = `Attack Points: ${fokemon.attack_points}`;
 
     let avatar = document.createElement("IMG");
