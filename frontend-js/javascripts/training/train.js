@@ -1,5 +1,10 @@
 class Train {
-  constructor() {
-    console.log("Training Session Initiated");
+  constructor(fokemon_id) {
+    this.fokemon_id = fokemon_id;
+    this.logit();
+  }
+
+  logit() {
+    console.log(this.fokemon_id);
   }
 }
