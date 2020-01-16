@@ -153,6 +153,7 @@ div #fokemon-name {
 }
 
 #save-button {
+  visibility: hidden;
   align-self: center;
   width: fit-content;
   height: fit-content;
@@ -170,6 +171,7 @@ div #fokemon-name {
   width: 50%;
   height: 50%;
   background-color: gray;
+  align-self: center;
 }
 
 #trainingImage {
