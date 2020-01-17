@@ -14,13 +14,17 @@
     
     
     <div class="container">
+      
       <div id= "training-field-container">
         <div id='training-field-header'>Training Field</div>
         <div id = 'avatar-container'></div>
-        <button id="train-button">TRAIN!</button>
-        <input type="text" value="Trainer Name Here" id="trainer-name">
-        <button id = "save-button">SAVE PROGRESS</button>
+        <form id="new-trainer-form">
+          <input type="text" value="Trainer Name Here" id="trainer-name">
+          <!-- hidden input inserted here to send fokemon_id -->
+          <input type="submit" id="train-button" value="Train!">
+        </form>
       </div>
+      
       <div id= "create-form-container"> 
         Create New Fokemon!
         <form id="new-fokemon-form">

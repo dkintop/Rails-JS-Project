@@ -5,8 +5,20 @@ class Train {
     this.displayAvatarOnTrainingField();
     this.displalyStats();
     this.addEventListeners();
+    this.addFokemonIdToForm(this.fokemon_id);
   }
   //Train class instance created when clicking train button on cardand passes in an argument of the fokemon id associated with that card. eventlistener and DOM element added in fokemons.js createCard()
+  addEventListeners() {
+    this.trainerForm = document.getElementById("new-trainer-form");
+    this.trainerForm.addEventListener("submit", this.createTrainer);
+    console.log("event listeners added");
+  }
+
+  createTrainer(e) {
+    e.preventDefault();
+    console.log("trainerr is being created");
+  }
+
   getAvatarSrc() {
     let avatar = document.getElementById(`avatar${this.fokemon_id}`);
     return avatar.getAttribute("src");
@@ -41,48 +53,26 @@ class Train {
     parent.appendChild(hitPointsContainer);
   }
 
-  createTrainer(name) {
-    const trainer = {
-      name: name,
-      fokemon_id: this.fokemon_id
-    };
-
-    return fetch("http://localhost:3000/trainers", {
-      method: "post",
-      headers: {
-        "content-type": "application/json"
-      },
-      body: JSON.stringify({ trainer })
-    });
-  }
-
-  addEventListeners() {
-    debugger;
-    let name = document.getElementById("trainer-name").value;
-    let trainButton = document.getElementById("train-button");
-    trainButton.addEventListener("click", function() {
-      const trainer = {
-        name: name,
-        fokemon_id: this.fokemon_id
-      };
-
-      return fetch("http://localhost:3000/trainers", {
-        method: "post",
-        headers: {
-          "content-type": "application/json"
-        },
-        body: JSON.stringify({ trainer })
-      });
-      console.log("button works");
-    });
+  addFokemonIdToForm(fokemon_id) {
+    let form = document.getElementById("new-trainer-form");
+    let hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("value", fokemon_id);
+    form.appendChild(hiddenField);
   }
 }
+//try copying what cernan does for his create action. might need to use a form.
 
-//   return fetch(`http://localhost:3000/fokemons/${fokemon.id}`, {
-//     method: "delete"
-//   })
-//     .then(response => response.json())
-//     .then(json => {
-//       return json;
-//     });
+//create:
+// const trainer = {
+//   name: name,
+//   fokemon_id: this.fokemon_id
+// };
+
+// return fetch("http://localhost:3000/trainers", {
+//   method: "post",
+//   headers: {
+//     "content-type": "application/json"
+//   },
+//   body: JSON.stringify({ trainer })
 // });
