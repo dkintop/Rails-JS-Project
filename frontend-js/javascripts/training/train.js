@@ -61,7 +61,18 @@ class Train {
     let name = document.getElementById("trainer-name").value;
     let trainButton = document.getElementById("train-button");
     trainButton.addEventListener("click", function() {
-      this.createTrainer(name);
+      const trainer = {
+        name: name,
+        fokemon_id: this.fokemon_id
+      };
+
+      return fetch("http://localhost:3000/trainers", {
+        method: "post",
+        headers: {
+          "content-type": "application/json"
+        },
+        body: JSON.stringify({ trainer })
+      });
       console.log("button works");
     });
   }
