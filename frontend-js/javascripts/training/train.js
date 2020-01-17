@@ -1,9 +1,10 @@
 class Train {
   constructor(fokemon_id) {
     this.fokemon_id = fokemon_id;
+    this.trainers = [];
     this.displayAvatarOnTrainingField();
     this.displalyStats();
-    this.addEventListensers();
+    this.addEventListeners();
   }
   //Train class instance created when clicking train button on cardand passes in an argument of the fokemon id associated with that card. eventlistener and DOM element added in fokemons.js createCard()
   getAvatarSrc() {
@@ -40,7 +41,7 @@ class Train {
     parent.appendChild(hitPointsContainer);
   }
 
-  addTrainer(name) {
+  createTrainer(name) {
     const trainer = {
       name: name,
       fokemon_id: this.fokemon_id
@@ -55,10 +56,14 @@ class Train {
     });
   }
 
-  addEventListensers() {
+  addEventListeners() {
+    debugger;
     let name = document.getElementById("trainer-name").value;
     let trainButton = document.getElementById("train-button");
-    trainButton.addEventListener("click", this.addTrainer(name));
+    trainButton.addEventListener("click", function() {
+      this.createTrainer(name);
+      console.log("button works");
+    });
   }
 }
 
