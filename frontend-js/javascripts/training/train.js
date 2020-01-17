@@ -81,6 +81,10 @@ class Train {
       li.innerHTML = `${trainer.name}`;
       box.appendChild(li);
     });
+
+    let header = document.createElement("h3");
+    header.innerHTML = "All Trainers:";
+    document.getElementById("avatar-container").appendChild(header);
     document.getElementById("avatar-container").appendChild(box);
   }
 
@@ -93,15 +97,3 @@ class Train {
       .then(() => this.displayTrainers());
   }
 }
-//try copying what cernan does for his create action. might need to use a form.
-
-// fetchAndLoadFokemons() {
-//     this.adapter
-//       .getFokemon()
-//       .then(fokemons => {
-//         fokemons.forEach(fokemon => this.fokemons.push(new Fokemon(fokemon)));
-//       })
-//       .then(() => {
-//         this.renderFokemons();
-//       });
-//   }
