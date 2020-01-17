@@ -2,7 +2,6 @@ class TrainersController < ApplicationController
 
 
     def create 
-         binding.pry
         @trainer = Trainer.create(trainer_params)
         render json: @trainer, status: 200
     end

@@ -1,22 +1,30 @@
 class Train {
   constructor(fokemon_id) {
+    this.adapter = new TrainerAdapter();
     this.fokemon_id = fokemon_id;
     this.trainers = [];
     this.displayAvatarOnTrainingField();
     this.displalyStats();
-    this.addEventListeners();
     this.addFokemonIdToForm(this.fokemon_id);
+    this.addEventListeners();
   }
   //Train class instance created when clicking train button on cardand passes in an argument of the fokemon id associated with that card. eventlistener and DOM element added in fokemons.js createCard()
   addEventListeners() {
     this.trainerForm = document.getElementById("new-trainer-form");
-    this.trainerForm.addEventListener("submit", this.createTrainer);
+    this.name = document.getElementById("trainer-name");
+    this.fokemonId = document.getElementById("fokemon_id");
+    this.trainerForm.addEventListener("submit", this.createTrainer.bind(this));
     console.log("event listeners added");
   }
 
   createTrainer(e) {
     e.preventDefault();
-    console.log("trainerr is being created");
+    const name = this.name.value;
+    const fokemonId = this.fokemonId.value;
+
+    this.adapter.createTrainer(name, fokemonId);
+
+    console.log("createTrainer triggered");
   }
 
   getAvatarSrc() {
@@ -57,22 +65,9 @@ class Train {
     let form = document.getElementById("new-trainer-form");
     let hiddenField = document.createElement("input");
     hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("id", "fokemon_id");
     hiddenField.setAttribute("value", fokemon_id);
     form.appendChild(hiddenField);
   }
 }
 //try copying what cernan does for his create action. might need to use a form.
-
-//create:
-// const trainer = {
-//   name: name,
-//   fokemon_id: this.fokemon_id
-// };
-
-// return fetch("http://localhost:3000/trainers", {
-//   method: "post",
-//   headers: {
-//     "content-type": "application/json"
-//   },
-//   body: JSON.stringify({ trainer })
-// });
