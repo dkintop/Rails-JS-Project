@@ -1,6 +1,7 @@
 class TrainerAdapter {
-  constructor() {
+  constructor(fokemon_id) {
     this.baseURL = "http://localhost:3000/trainers";
+    this.getTrainersURL = `http://localhost:3000/fokemons/${fokemon_id}`;
   }
 
   createTrainer(name, fokemon_id) {
@@ -16,5 +17,9 @@ class TrainerAdapter {
       },
       body: JSON.stringify({ trainer })
     });
+  }
+
+  getTrainers() {
+    return fetch(this.getTrainersURL).then(res => res.json());
   }
 }

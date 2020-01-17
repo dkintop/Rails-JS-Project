@@ -18,9 +18,11 @@ class FokemonsController < ApplicationController
         render json: {fokemonId: @fokemon.id}
     end
 
-    def show
-        @fokemon = Fokemon.find(params[:id])
-        render json: @fokemon
+    def show  
+        #this action being used to display index of all trainers associated with the specified fokemon object.
+        fokemon = Fokemon.find(params[:id])
+        @trainers = fokemon.trainers
+        render json: @trainers
     end
 
 

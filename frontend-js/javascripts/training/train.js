@@ -1,12 +1,14 @@
 class Train {
   constructor(fokemon_id) {
-    this.adapter = new TrainerAdapter();
+    this.trainers = [];
+    this.adapter = new TrainerAdapter(fokemon_id);
     this.fokemon_id = fokemon_id;
     this.trainers = [];
     this.displayAvatarOnTrainingField();
     this.displalyStats();
     this.addFokemonIdToForm(this.fokemon_id);
     this.addEventListeners();
+    this.fetchAndLoadTrainers();
   }
   //Train class instance created when clicking train button on cardand passes in an argument of the fokemon id associated with that card. eventlistener and DOM element added in fokemons.js createCard()
   addEventListeners() {
@@ -69,5 +71,37 @@ class Train {
     hiddenField.setAttribute("value", fokemon_id);
     form.appendChild(hiddenField);
   }
+
+  displayTrainers() {
+    let box = document.createElement("ul");
+    box.setAttribute("id", "trainers-display");
+    this.trainers.forEach(trainer => {
+      let li = document.createElement("li");
+      li.setAttribute("id", `trainer${trainer.id}`);
+      li.innerHTML = `${trainer.name}`;
+      box.appendChild(li);
+    });
+    document.getElementById("avatar-container").appendChild(box);
+  }
+
+  fetchAndLoadTrainers() {
+    this.adapter
+      .getTrainers()
+      .then(trainers => {
+        trainers.forEach(trainer => this.trainers.push(new Trainer(trainer)));
+      })
+      .then(() => this.displayTrainers());
+  }
 }
 //try copying what cernan does for his create action. might need to use a form.
+
+// fetchAndLoadFokemons() {
+//     this.adapter
+//       .getFokemon()
+//       .then(fokemons => {
+//         fokemons.forEach(fokemon => this.fokemons.push(new Fokemon(fokemon)));
+//       })
+//       .then(() => {
+//         this.renderFokemons();
+//       });
+//   }
