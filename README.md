@@ -1,4 +1,4 @@
-Fokemon!
+#Fokemon!
 
 This repository contains both the backend Ruby on Rails files in the backend-api directory and the front-end javascript and html files in the frontend-js directory. To run this application on your local machine, first fork and clone this repository onto your local machine, then follow these steps:
 
