@@ -57,6 +57,7 @@ class Fokemons {
   createCard(fokemon) {
     let card = document.createElement("DIV");
     card.setAttribute("class", "card");
+    card.setAttribute("data-id", fokemon.id);
 
     let name = document.createElement("DIV");
     name.setAttribute("id", "fokemon_name");
@@ -123,6 +124,11 @@ class Fokemons {
         .then(response => response.json())
         .then(json => {
           return json;
+        })
+        .then(() => {
+          let card = document.querySelector(`[data-id = "${fokemon.id}"]`);
+          let parent = document.getElementById("index-container");
+          parent.removeChild(card);
         });
     });
   }
