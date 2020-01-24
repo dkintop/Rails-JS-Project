@@ -27,16 +27,18 @@ class Fokemons {
       avatar: avatar
     };
 
-    this.fokemons.push(newFokemon); //changes to make elements appear on DOM without page refresh. 2 lines was all it took!
-    this.createCard(newFokemon);
+    this.fokemons.push(newFokemon); //changes to make elements appear on DOM without page refresh
 
-    this.adapter.createFokemon({
-      name: name,
-      element_type: elementType,
-      hit_points: hitPoints,
-      attack_points: attackPoints,
-      avatar: avatar
-    });
+    this.adapter
+      .createFokemon({
+        name: name,
+        element_type: elementType,
+        hit_points: hitPoints,
+        attack_points: attackPoints,
+        avatar: avatar
+      })
+
+      .then(this.createCard(newFokemon));
   }
 
   fetchAndLoadFokemons() {
@@ -126,7 +128,7 @@ class Fokemons {
           return json;
         })
         .then(() => {
-          let card = document.querySelector(`[data-id = "${fokemon.id}"]`);
+          let card = document.querySelector(`[data-id = "${fokemon.id}"]`); //new code to allow for deleting from DOM without refresh
           let parent = document.getElementById("index-container");
           parent.removeChild(card);
         });

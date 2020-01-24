@@ -5,4 +5,4 @@ This repository contains both the backend Ruby on Rails files in the backend-api
 -cd into the backend-api directory and then in terminal run 'bundle install'
 -run rails db:migrate to create databse and schema
 -run rails s to start rails server, neccessary for frontend javascript to make api calls.
--open index.html in browser (if using VS code, reccomend live server extension)
+-open index.html in browser
