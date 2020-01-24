@@ -10,7 +10,7 @@ class Train {
     this.addEventListeners();
     this.fetchAndLoadTrainers();
   }
-  //Train class instance created when clicking train button on cardand passes in an argument of the fokemon id associated with that card. eventlistener and DOM element added in fokemons.js createCard()
+  //Train class instance created when clicking train button on card and passes in an argument of the fokemon id associated with that card. eventlistener and DOM element added in fokemons.js createCard()
   addEventListeners() {
     this.trainerForm = document.getElementById("new-trainer-form");
     this.name = document.getElementById("trainer-name");

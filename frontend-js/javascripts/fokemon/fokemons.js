@@ -27,18 +27,13 @@ class Fokemons {
       avatar: avatar
     };
 
-    this.fokemons.push(newFokemon); //changes to make elements appear on DOM without page refresh
+    //changes to make elements appear on DOM without page refresh.
 
-    this.adapter
-      .createFokemon({
-        name: name,
-        element_type: elementType,
-        hit_points: hitPoints,
-        attack_points: attackPoints,
-        avatar: avatar
-      })
-
-      .then(this.createCard(newFokemon));
+    this.adapter.createFokemon(newFokemon);
+    this.adapter.getFokemon().then(fokemons => {
+      this.createCard(fokemons[fokemons.length - 1]);
+    });
+    // this.createCard(newFokemon); line of code used initially to render card to DOM. issue was that since id was undefined at this point things were getting messed up since the data - id of the card div was also being set to undefined.
   }
 
   fetchAndLoadFokemons() {
