@@ -19,6 +19,17 @@ class Fokemons {
     const attackPoints = document.getElementById("attack_points").value;
     const avatar = document.getElementById("avatar").value;
 
+    let newFokemon = {
+      name: name,
+      element_type: elementType,
+      hit_points: hitPoints,
+      attack_points: attackPoints,
+      avatar: avatar
+    };
+
+    this.fokemons.push(newFokemon); //changes to make elements appear on DOM without page refresh. 2 lines was all it took!
+    this.createCard(newFokemon);
+
     this.adapter.createFokemon({
       name: name,
       element_type: elementType,
