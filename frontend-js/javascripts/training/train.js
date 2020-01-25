@@ -21,12 +21,22 @@ class Train {
 
   createTrainer(e) {
     e.preventDefault();
+
     const name = this.name.value;
     const fokemonId = this.fokemonId.value;
 
     this.adapter.createTrainer(name, fokemonId);
 
-    console.log("createTrainer triggered");
+    this.adapter.getTrainers().then(trainers => {
+      this.trainers.push(new Trainer(trainers[trainers.length - 1])); //rest of this method added to allow new trainer names to display to the DOM after being created without refresh.
+
+      let box = document.getElementById("trainers-display");
+      let newTrainer = this.trainers[this.trainers.length - 1];
+      let li = document.createElement("li");
+      li.setAttribute("id", `trainer${newTrainer.id}`);
+      li.innerHTML = `${newTrainer.name}`;
+      box.appendChild(li);
+    });
   }
 
   getAvatarSrc() {

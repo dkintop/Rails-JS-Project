@@ -29,10 +29,12 @@ class Fokemons {
 
     //changes to make elements appear on DOM without page refresh.
 
-    this.adapter.createFokemon(newFokemon);
-    this.adapter.getFokemon().then(fokemons => {
-      this.createCard(fokemons[fokemons.length - 1]);
-    });
+    this.adapter.createFokemon(newFokemon).then(
+      this.adapter.getFokemon().then(fokemons => {
+        this.fokemons.push(new Fokemon(fokemons[fokemons.length - 1])); //update fokemons array
+        this.createCard(fokemons[fokemons.length - 1]); //creaates card and appends it to the DOM
+      })
+    );
     // this.createCard(newFokemon); line of code used initially to render card to DOM. issue was that since id was undefined at this point things were getting messed up since the data - id of the card div was also being set to undefined.
   }
 
