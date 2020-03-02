@@ -8,3 +8,5 @@ This repository contains both the backend Ruby on Rails files in the backend-api
 -run rails db:migrate to create databse and schema
 -run rails s to start rails server, neccessary for frontend javascript to make api calls.
 -open index.html in browser
+
+video demo can be found at this link : https://www.youtube.com/watch?v=JRXJ_az4on4
