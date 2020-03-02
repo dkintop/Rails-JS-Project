@@ -14,4 +14,5 @@ video demo :
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=JRXJ_az4on4&t=4s
 " target="_blank"><img src='https://i.ytimg.com/vi/JRXJ_az4on4/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBCNOBDEafpWaKX6UkI4Op_9v1ZtQ' 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
 NOTE: since video demonstration, project has been updated to allow for new data to be rendered to the page without a refresh of the window.
