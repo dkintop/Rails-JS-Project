@@ -10,3 +10,4 @@ This repository contains both the backend Ruby on Rails files in the backend-api
 -open index.html in browser
 
 video demo can be found at this link : https://www.youtube.com/watch?v=JRXJ_az4on4
+NOTE: since video demonstration, project has been updated to allow for new data to be rendered to the page without a refresh of the window.
