@@ -12,6 +12,6 @@ This repository contains both the backend Ruby on Rails files in the backend-api
 video demo :
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=JRXJ_az4on4&t=4s
-" target="_blank"><img src="http://img.youtube.com/vi/JRXJ_az4on4&t=4s/0.jpg" 
+" target="_blank"><img src="http://img.youtube.com/vi/v=JRXJ_az4on4&t=4s/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 NOTE: since video demonstration, project has been updated to allow for new data to be rendered to the page without a refresh of the window.
