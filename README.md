@@ -1,4 +1,6 @@
-##Fokemon!
+# Fokemon!
+
+  This Project is a simple exercise in DOM manipulation using vanilla javascript and utilizing the fetch() api to make API calls to the back end rails api for data persistance.
 
 This repository contains both the backend Ruby on Rails files in the backend-api directory and the front-end javascript and html files in the frontend-js directory. To run this application on your local machine, first fork and clone this repository onto your local machine, then follow these steps:
 
